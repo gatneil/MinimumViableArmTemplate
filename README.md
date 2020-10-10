@@ -1,0 +1,3 @@
+# Minimum Viable ARM Template
+
+This repo has sample code for a series of blog posts showing how to build ARM templates. We begin with a very simple template and incrementally build up more complex templates, looking at the diffs along the way. This way, it is easy to isolate the changes needed in the ARM template for each scenario, allowing us to mix and match diffs to build custom templates. Each template gets its own branch in this repo (usually the template is in a file called azuredeploy.json). A great place to begin is on the "minimum-viable-vm" branch.
