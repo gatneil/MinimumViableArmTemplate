@@ -35,7 +35,10 @@
       "type": "Microsoft.Network/publicIpAddresses",
       "apiVersion": "2020-06-01",
       "name": "myPip",
-      "location": "[resourceGroup().location]"
+      "location": "[resourceGroup().location]",
+      "zones": [
+        1
+      ]
     },
     {
       "type": "Microsoft.Network/networkInterfaces",
@@ -69,6 +72,9 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', 'myNic')]"
+      ],
+      "zones": [
+        1
       ],
       "properties": {
         "hardwareProfile": {
