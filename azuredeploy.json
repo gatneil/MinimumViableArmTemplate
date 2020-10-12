@@ -80,7 +80,19 @@
             "offer": "UbuntuServer",
             "sku": "18.04-LTS",
             "version": "latest"
-          }
+          },
+          "dataDisks": [
+            {
+              "diskSizeGB": "100",
+              "lun": 0,
+              "createOption": "Empty"
+            },
+            {
+              "diskSizeGB": "100",
+              "lun": 1,
+              "createOption": "Empty"
+            }
+          ]
         },
         "networkProfile": {
           "networkInterfaces": [
