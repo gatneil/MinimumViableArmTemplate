@@ -67,7 +67,8 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/virtualNetworks/', 'myVnet')]",
-        "[resourceId('Microsoft.Network/publicIpAddresses/', 'myPip')]"
+        "[resourceId('Microsoft.Network/publicIpAddresses/', 'myPip')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups/', 'myNsg')]"
       ],
       "properties": {
         "ipConfigurations": [
