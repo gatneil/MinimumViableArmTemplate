@@ -63,14 +63,31 @@
       }
     },
     {
+      "type": "Microsoft.Compute/availabilitySets",
+      "name": "myAvSet",
+      "apiVersion": "2020-06-01",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "platformFaultDomainCount": 2,
+        "platformUpdateDomainCount": 2
+      },
+      "sku": {
+        "name": "Aligned"
+      }
+    },
+    {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2020-06-01",
       "name": "myVM",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[resourceId('Microsoft.Network/networkInterfaces', 'myNic')]"
+        "[resourceId('Microsoft.Network/networkInterfaces', 'myNic')]",
+        "[resourceId('Microsoft.Compute/availabilitySets', 'myAvSet')]"
       ],
       "properties": {
+        "availabilitySet": {
+          "id": "[resourceId('Microsoft.Compute/availabilitySets', 'myAvSet')]"
+        },
         "hardwareProfile": {
           "vmSize": "Standard_D2_v4"
         },
